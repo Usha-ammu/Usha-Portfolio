@@ -1,0 +1,360 @@
+/* Custom Properties for easy color changes */
+:root {
+    --color-primary: #8A2BE2; /* A vibrant purple (Blue Violet) */
+    --color-secondary: #4B0082; /* A deeper purple (Indigo) */
+    --color-background: #000000; /* Black background */
+    --color-text-main: #FFFFFF; /* White text for contrast */
+    --color-card-bg: #1A1A1A; /* Dark gray for cards */
+    --color-hover-bg: #E0B0FF; /* Lighter purple for hover */
+}
+
+/* Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth; /* For smooth scrolling navigation */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: var(--color-text-main);
+    background-color: var(--color-background);
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    position: relative; /* Context for canvas positioning */
+}
+
+/* Particle Canvas Overlay */
+#particle-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Keep it behind all content */
+}
+
+/* Header/Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+    padding: 1rem 3rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    z-index: 10; /* Keep it on top */
+}
+
+.navbar a {
+    color: var(--color-text-main);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s, background-color 0.3s;
+    border-radius: 5px;
+}
+
+.navbar a:hover, .navbar a.active {
+    color: var(--color-primary);
+    background-color: var(--color-card-bg);
+}
+
+/* Call-to-Action Buttons */
+.cta-button {
+    background-color: var(--color-primary);
+    color: var(--color-text-main) !important; /* Override white for contrast */
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: background-color 0.3s, transform 0.3s;
+    border: 2px solid var(--color-primary);
+}
+
+.cta-button:hover {
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
+    transform: scale(1.05);
+}
+
+/* Section Styling */
+section {
+    padding: 6rem 10%; /* Add space for the fixed header */
+    min-height: 100vh; /* Make sections full height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h2 {
+    color: white;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+  
+}
+
+/* Home/Hero Section */
+#home {
+    text-align: center;
+    min-height: 100vh;
+}
+
+#home h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: var(--color-text-main);
+}
+/* ========================================================= */
+/* 1. SKILLS SECTION STYLING (Icon-Based) */
+/* ========================================================= */
+ 
+/* ... (Other styles like .skills-grid and .skills-category) ... */
+
+/* ========================================================= */
+/* 1. SKILLS SECTION STYLING (Two-Column Grid) */
+/* ========================================================= */
+.content-section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content-section h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #333;
+    position: relative;
+    font-weight: 700;
+}
+
+.content-section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #007bff; /* Primary accent color */
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.skills-grid {
+    /* Sets up the main two-column layout */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.skills-category {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+}
+
+.skills-category h3 {
+    font-size: 1.5em;
+    margin-bottom: 25px;
+    color: #555;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    font-weight: 600;
+}
+
+.skill-icon-list {
+    /* Arranges the icons horizontally within their category */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 10px 0;
+}
+
+.skill-icon {
+    /* Enforces the size of the icons */
+    width: 60px !important; 
+    height: 60px !important;
+    object-fit: contain;
+    padding: 5px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.skill-icon:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* ========================================================= */
+/* RESPONSIVENESS */
+/* ========================================================= */
+@media (max-width: 992px) {
+    .skills-grid {
+        /* Stacks the columns vertically on tablets */
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .skill-icon {
+        /* Makes icons slightly smaller on phones */
+        width: 50px !important;
+        height: 50px !important;
+    }
+}
+/* Projects & Skills Layouts */
+.project-cards-container, .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.project-card {
+    background-color: var(--color-card-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    border-left: 5px solid var(--color-primary);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(138, 43, 226, 0.3); /* Purple shadow */
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+/* ========================================================= */
+/* 4. INTERNSHIP SECTION STYLING (New) */
+/* ========================================================= */
+
+.internship-cards-container {
+    display: grid;
+    /* Two columns for internships */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 30px; 
+    margin-bottom: 30px;
+}
+
+.internship-card {
+    background-color: #100f0f;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-left: 5px solid #007bff; /* Accent border */
+    transition: box-shadow 0.3s ease;
+     box-shadow: 0 10px 20px rgba(138, 43, 226, 0.3); 
+}
+
+.internship-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.internship-card .company-name {
+    font-size: 1.3em;
+    color: #FFFFFF;
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.internship-card .role {
+    font-weight: 500;
+    color: #007bff;
+    font-size: 0.9em;
+}
+
+.internship-card .duration {
+    font-size: 0.9em;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+    border-bottom: 1px dashed #eee;
+    padding-bottom: 10px;
+}
+
+.internship-card .achievements {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.internship-card .achievements li {
+    margin-bottom: 10px;
+    font-size: 0.95em;
+    color: #FFFFFF;
+}
+
+/* Add Responsiveness for Internships */
+@media (max-width: 768px) {
+    .internship-cards-container {
+        /* Stack internships vertically on smaller screens */
+        grid-template-columns: 1fr; 
+    }
+}
+
+ /* Must be in your <style> block */
+/* ========================================================= */
+/* 4. CERTIFICATIONS SECTION STYLING (Semi-Transparent Box Look) */
+/* ========================================================= */
+
+.certification-gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; 
+    gap: 25px; 
+}
+
+.cert-card {
+    width: 300px; 
+    /* 🎨 CHANGE HERE: Use a semi-transparent white (70% opacity) */
+    background-color: rgba(22, 21, 21, 0.7); 
+    padding: 25px;
+    border-radius: 10px;
+    
+    /* Keep a subtle shadow, but make it lighter */
+      box-shadow: 0 10px 20px rgba(138, 43, 226, 0.3); 
+    
+    /* Make the border more subtle */
+    border: 1px solid rgba(238, 238, 238, 0.5); 
+    
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cert-card:hover {
+    /* Optional: Make the box fully opaque on hover for contrast */
+     background-color: rgba(22, 21, 21, 0.7); 
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Rest of the certification styling (h3, p, cert-link) remains the same */
+
+/* ... (Rest of .cert-card h3, p, and .cert-link styles) ... */
+
+/* Contact Section */
+.contact-links a {
+    color: var(--color-text-main);
+    padding: 0.75rem 1.5rem;
+    margin: 0.5rem;
+    border: 2px solid var(--color-primary);
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+    display: inline-block;
+}
+
+.contact-links a:hover {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+}
