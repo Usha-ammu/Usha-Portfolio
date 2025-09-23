@@ -1,213 +1,259 @@
-/* Custom Properties for easy color changes */
+/* --- Custom Properties for colors --- */
 :root {
-    --color-primary: #8A2BE2; /* A vibrant purple (Blue Violet) */
-    --color-secondary: #4B0082; /* A deeper purple (Indigo) */
-    --color-background: #000000; /* Black background */
-    --color-text-main: #FFFFFF; /* White text for contrast */
-    --color-card-bg: #1A1A1A; /* Dark gray for cards */
-    --color-hover-bg: #E0B0FF; /* Lighter purple for hover */
+    --color-primary: #8a2be2; /* Deep Sky Blue for accents */
+    --color-background: #111;
+    --color-text-main: #f0f0f0;
+    --color-card-bg: #222;
+    --color-hover-bg: rgba(230, 135, 212, 0.2);
+    --border-radius: 20px;
+    --card-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
 }
 
-/* Base Styles */
+/* --- Base Styles --- */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    scroll-behavior: smooth; /* For smooth scrolling navigation */
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--color-text-main);
     background-color: var(--color-background);
     line-height: 1.6;
-    overflow-x: hidden; /* Prevent horizontal scroll */
-    position: relative; /* Context for canvas positioning */
+    overflow-x: hidden;
+    position: relative;
 }
 
-/* Particle Canvas Overlay */
+h1, h2, h3 {
+    font-weight: 600;
+    color: var(--color-text-main);
+    line-height: 1.2;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-primary);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #8a2be2; /* Light Sky Blue */
+}
+
+/* --- Particle Canvas Overlay --- */
 #particle-canvas {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Keep it behind all content */
+    z-index: -1;
+    background: radial-gradient(circle at center, #0a141a 0%, #000 100%);
 }
 
-/* Header/Navigation */
+/* --- Navigation Bar --- */
 .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
-    padding: 1rem 3rem;
+    background: rgba(34, 34, 34, 0.9);
+    padding: 0.5rem 2rem;
+    margin: 20px auto;
+    max-width: fit-content;
+    border-radius: 50px;
     display: flex;
     justify-content: center;
-    gap: 2rem;
-    z-index: 10; /* Keep it on top */
+    gap: 1.5rem;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .navbar a {
     color: var(--color-text-main);
-    text-decoration: none;
-    font-weight: bold;
+    font-weight: 500;
     padding: 0.5rem 1rem;
     transition: color 0.3s, background-color 0.3s;
-    border-radius: 5px;
+    border-radius: 25px;
 }
 
-.navbar a:hover, .navbar a.active {
+.navbar a:hover {
     color: var(--color-primary);
-    background-color: var(--color-card-bg);
+    background-color: var(--color-hover-bg);
 }
 
-/* Call-to-Action Buttons */
-.cta-button {
-    background-color: var(--color-primary);
-    color: var(--color-text-main) !important; /* Override white for contrast */
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    text-transform: uppercase;
+.navbar .cta-button {
+    background: var(--color-primary);
+    color: #111 !important;
+    padding: 8px 18px;
+    border-radius: 25px;
     font-size: 0.9rem;
-    transition: background-color 0.3s, transform 0.3s;
+    font-weight: 600;
+}
+
+/* --- Call-to-Action Buttons --- */
+.cta-button {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: transform 0.2s ease;
     border: 2px solid var(--color-primary);
 }
 
-.cta-button:hover {
-    background-color: var(--color-secondary);
-    border-color: var(--color-secondary);
+.cta-button.primary-btn {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    box-shadow: 0 0 15px rgba(0, 191, 255, 0.4);
+}
+
+.cta-button.primary-btn:hover {
+    background-color:#b076e6;
     transform: scale(1.05);
 }
 
-/* Section Styling */
+.cta-button.secondary-btn {
+    background-color: transparent;
+    color: var(--color-primary);
+}
+
+.cta-button.secondary-btn:hover {
+    background-color: var(--color-hover-bg);
+    transform: scale(1.05);
+}
+
+/* --- Section Styling --- */
 section {
-    padding: 6rem 10%; /* Add space for the fixed header */
-    min-height: 100vh; /* Make sections full height */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-h2 {
-    color: white;
-    margin-bottom: 2rem;
-    font-size: 2.5rem;
-  
-}
-
-/* Home/Hero Section */
-#home {
-    text-align: center;
-    min-height: 100vh;
-}
-
-#home h1 {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-    color: var(--color-text-main);
-}
-/* ========================================================= */
-/* 1. SKILLS SECTION STYLING (Icon-Based) */
-/* ========================================================= */
- 
-/* ... (Other styles like .skills-grid and .skills-category) ... */
-
-/* ========================================================= */
-/* 1. SKILLS SECTION STYLING (Two-Column Grid) */
-/* ========================================================= */
-.content-section {
-    padding: 60px 20px;
+    padding: 80px 5%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.content-section h2 {
+h2 {
     text-align: center;
-    font-size: 2.5em;
-    margin-bottom: 40px;
-    color: #333;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
     position: relative;
-    font-weight: 700;
+    display: inline-block;
 }
 
-.content-section h2::after {
+h2::after {
     content: '';
     display: block;
     width: 60px;
     height: 4px;
-    background-color: #007bff; /* Primary accent color */
+    background-color: var(--color-primary);
     margin: 10px auto 0;
     border-radius: 2px;
 }
 
+/* --- Hero Section (Home) --- */
+#home {
+    display: flex; /* Use flexbox for horizontal layout */
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    padding: 80px 5%; /* Adjust padding */
+    min-height: 100vh;
+    text-align: left; /* Align text left within its column */
+}
+
+#home .content-left {
+    flex: 1; /* Takes up available space */
+    max-width: 600px; /* Limit width of text content */
+    margin-right: 40px; /* Space between text and image */
+}
+
+#home .content-right {
+    flex: 1; /* Takes up available space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px; /* Limit width of image column */
+    margin-left: 40px; /* Space between text and image */
+}
+
+.image-box {
+    width: 100%;
+    max-width: 400px; /* Max width for the image container */
+    aspect-ratio: 1 / 1; /* Makes the box square */
+    background: linear-gradient(45deg, var(--color-primary), #8a2be2); /* Gradient border effect */
+    border-radius: var(--border-radius); /* Use the defined border-radius */
+    padding: 10px; /* Creates the visible border */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 25px rgba(0, 191, 255, 0.6); /* Stronger glow effect */
+    animation: pulseGlow 2s infinite alternate; /* Add a subtle pulsing glow */
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image covers the box without distortion */
+    border-radius: calc(var(--border-radius) - 5px); /* Slightly smaller border-radius for image */
+    display: block; /* Removes extra space below image */
+}
+
+@keyframes pulseGlow {
+    from {
+        box-shadow: 0 0 15px rgba(0, 191, 255, 0.4);
+    }
+    to {
+        box-shadow: 0 0 30px rgba(0, 191, 255, 0.8);
+    }
+}
+
+/* --- About Section --- */
+#about p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    color: #bbb;
+}
+
+/* --- Skills & Tools Section --- */
 .skills-grid {
-    /* Sets up the main two-column layout */
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 40px;
 }
 
 .skills-category {
-    padding: 0;
-    border: none;
-    background-color: transparent;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    background-color: var(--color-card-bg);
+    box-shadow: 0 10px 20px rgba(188, 116, 216, 0.3); /* Updated box shadow for skills category */
+    width: 100%;
+    max-width: 450px;
+    border: 1px solid #333;
 }
 
 .skills-category h3 {
-    font-size: 1.5em;
-    margin-bottom: 25px;
-    color: #555;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 10px;
-    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
 }
 
 .skill-icon-list {
-    /* Arranges the icons horizontally within their category */
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
-    padding: 10px 0;
+    justify-content: center;
+    gap: 20px;
 }
 
 .skill-icon {
-    /* Enforces the size of the icons */
-    width: 60px !important; 
-    height: 60px !important;
+    width: 60px;
+    height: 60px;
     object-fit: contain;
-    padding: 5px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, opacity 0.2s ease;
+    transition: transform 0.3s ease; /* Keep the transition for a smooth hover */
 }
 
 .skill-icon:hover {
-    transform: scale(1.05);
-    opacity: 0.9;
+    transform: scale(1.1);
 }
 
-/* ========================================================= */
-/* RESPONSIVENESS */
-/* ========================================================= */
-@media (max-width: 992px) {
-    .skills-grid {
-        /* Stacks the columns vertically on tablets */
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 600px) {
-    .skill-icon {
-        /* Makes icons slightly smaller on phones */
-        width: 50px !important;
-        height: 50px !important;
-    }
-}
-/* Projects & Skills Layouts */
-.project-cards-container, .skills-grid {
+/* --- Projects Section --- */
+.project-cards-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
@@ -220,11 +266,23 @@ h2 {
     border-radius: 10px;
     border-left: 5px solid var(--color-primary);
     transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: var(--card-shadow);
 }
 
 .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(138, 43, 226, 0.3); /* Purple shadow */
+     box-shadow: 0 10px 20px rgba(188, 116, 216, 0.3);;
+}
+
+.project-card h3 {
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.project-card p {
+    color: #bbb;
+    margin-bottom: 1.5rem;
 }
 
 .project-link {
@@ -233,35 +291,31 @@ h2 {
     color: var(--color-primary);
     text-decoration: underline;
 }
-/* ========================================================= */
-/* 4. INTERNSHIP SECTION STYLING (New) */
-/* ========================================================= */
 
+/* --- Internship Section --- */
 .internship-cards-container {
     display: grid;
-    /* Two columns for internships */
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 30px; 
-    margin-bottom: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
 }
 
 .internship-card {
-    background-color: #100f0f;
+    background-color: var(--color-card-bg);
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    border-left: 5px solid #007bff; /* Accent border */
-    transition: box-shadow 0.3s ease;
-     box-shadow: 0 10px 20px rgba(138, 43, 226, 0.3); 
+    border-left: 5px solid var(--color-primary);
+    box-shadow: var(--card-shadow);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .internship-card:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 10px 20px rgba(188, 116, 216, 0.3);;
+    transform: translateY(-5px);
 }
 
 .internship-card .company-name {
     font-size: 1.3em;
-    color: #FFFFFF;
+    color: var(--color-primary);
     margin-top: 0;
     margin-bottom: 5px;
     font-weight: 700;
@@ -269,15 +323,15 @@ h2 {
 
 .internship-card .role {
     font-weight: 500;
-    color: #007bff;
+    color: var(--color-primary);
     font-size: 0.9em;
 }
 
 .internship-card .duration {
     font-size: 0.9em;
-    color: #FFFFFF;
+    color: #aaa;
     margin-bottom: 20px;
-    border-bottom: 1px dashed #eee;
+    border-bottom: 1px dashed #444;
     padding-bottom: 10px;
 }
 
@@ -289,72 +343,97 @@ h2 {
 .internship-card .achievements li {
     margin-bottom: 10px;
     font-size: 0.95em;
-    color: #FFFFFF;
+    color: #bbb;
 }
 
-/* Add Responsiveness for Internships */
-@media (max-width: 768px) {
-    .internship-cards-container {
-        /* Stack internships vertically on smaller screens */
-        grid-template-columns: 1fr; 
-    }
-}
-
- /* Must be in your <style> block */
-/* ========================================================= */
-/* 4. CERTIFICATIONS SECTION STYLING (Semi-Transparent Box Look) */
-/* ========================================================= */
-
+/* --- Certifications Gallery --- */
 .certification-gallery {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
     justify-content: center;
-    flex-wrap: wrap; 
-    gap: 25px; 
 }
 
 .cert-card {
-    width: 300px; 
-    /* 🎨 CHANGE HERE: Use a semi-transparent white (70% opacity) */
-    background-color: rgba(22, 21, 21, 0.7); 
-    padding: 25px;
-    border-radius: 10px;
-    
-    /* Keep a subtle shadow, but make it lighter */
-      box-shadow: 0 10px 20px rgba(138, 43, 226, 0.3); 
-    
-    /* Make the border more subtle */
-    border: 1px solid rgba(238, 238, 238, 0.5); 
-    
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    background-color: var(--color-card-bg);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    border: 1px solid #333;
+    text-align: center;
+    transition: transform 0.3s ease;
 }
+
 
 .cert-card:hover {
-    /* Optional: Make the box fully opaque on hover for contrast */
-     background-color: rgba(22, 21, 21, 0.7); 
     transform: translateY(-5px);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 20px rgba(188, 116, 216, 0.3);
 }
 
-/* Rest of the certification styling (h3, p, cert-link) remains the same */
+.cert-card h3 {
+    font-size: 1.25rem;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+}
 
-/* ... (Rest of .cert-card h3, p, and .cert-link styles) ... */
+.cert-card p {
+    color: #aaa;
+    font-size: 0.9rem;
+}
 
-/* Contact Section */
+/* --- Contact Section --- */
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 2rem;
+}
+
 .contact-links a {
     color: var(--color-text-main);
-    padding: 0.75rem 1.5rem;
-    margin: 0.5rem;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
     border: 2px solid var(--color-primary);
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s, color 0.3s;
-    display: inline-block;
 }
 
 .contact-links a:hover {
     background-color: var(--color-primary);
-    color: var(--color-background);
+    color: #111;
+}
+
+/* --- Media Queries for Responsiveness --- */
+@media (max-width: 992px) {
+    #home {
+        flex-direction: column; /* Stack content vertically */
+        text-align: center;
+    }
+
+    #home .content-left {
+        margin-right: 0;
+        margin-bottom: 40px; /* Space between text and image when stacked */
+        max-width: 100%;
+    }
+
+    #home .content-right {
+        margin-left: 0;
+        max-width: 80%; /* Adjust image width for smaller screens */
+    }
+    
+    .navbar {
+        top: 10px;
+        padding: 0.5rem 1rem;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #home h1 {
+        font-size: 2.5rem;
+    }
+
+    .cta-button {
+        padding: 10px 20px;
+    }
 }
