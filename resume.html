@@ -18,8 +18,8 @@
             --sidebar-color: #121212; /* Slightly contrasting dark gray/black */
             --text-color-light: #f0f0f0; /* Main light text */
             --text-color-dark: #b0b0b0; /* Secondary gray text for details */
-            --accent-color: #8a2be2; /* BlueViolet - A nice, dark purple for minor accents */
-            --link-color: #e21cff; /* Neon Magenta/Electric Purple for main highlights/links */
+            --accent-color:#8a2be2; /* BlueViolet - A nice, dark purple for minor accents */
+            --link-color: #8a2be2; /* Neon Magenta/Electric Purple for main highlights/links */
         }
 
         * {
@@ -229,25 +229,24 @@
             padding-bottom: 5px;
         }
 
-        /* Certifications/Courses styling */
-        .list-item-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            list-style: none;
-            padding: 0;
-        }
+       /* Certifications/Courses styling */
+.list-item-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+}
 
-        .list-item-group li {
-            background-color: rgba(226, 28, 255, 0.15); /* Neon purple pill background */
-            color: var(--link-color);
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            font-weight: 600;
-            border: 1px solid rgba(226, 28, 255, 0.5); /* Adds definition to the pill */
-        }
-
+.list-item-group li {
+    background-color: var(--color-card-bg); /* Use the standard card background color */
+    color: var(--color-text-main); /* Use the main text color */
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 600;
+    border: 1px solid #333; /* A subtle border for definition */
+}
         /* Media Query for Responsiveness */
         @media (max-width: 900px) {
             .resume-container {
@@ -272,8 +271,8 @@
 
         <ul class="contact-info">
             <li><i class="fas fa-envelope"></i> harinichandru019@gmail.com</li>
-            <li><i class="fas fa-phone"></i> 8300********</li>
-            <li><i class="fas fa-map-marker-alt"></i> **, Singara Street, ********, Erode</li>
+            <li><i class="fas fa-phone"></i> 8300649754</li>
+            <li><i class="fas fa-map-marker-alt"></i> 92, Singara Street, Anthiyur, Erode</li>
         </ul>
 
         <div class="social-links">
@@ -352,12 +351,10 @@
                 <h3>HIGHER SECONDARY SCHOOL</h3>
                 <p class="subtitle"><span>GOVERNMENT MODEL HIGHER SECONDARY SCHOOL, Anthiyur</span><span>2021-2022</span></p>
                 <p>Percentage: 77</p>
-            </div> 
-
-              
-            <div class="item">
+            </div>
+              <div class="item">
                 <h3>SECONDARY SCHOOL</h3>
-                <p class="subtitle"><span>ST MICHAEL'S HIGHER SECONDARY SCHOOL, Anthiyur</span><span>2019-2020</span></p>
+                <p class="subtitle"><span>ST MICHAEL'S HIGHER SECONDARY SCHOOL, Anthiyur</span><span>2021-2022</span></p>
                 <p>Percentage: 74</p>
             </div>
         </section>
@@ -417,7 +414,4 @@
 </div>
 
 </body>
-
 </html>
-
-
