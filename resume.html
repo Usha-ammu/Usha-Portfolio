@@ -275,10 +275,306 @@
             <li><i class="fas fa-map-marker-alt"></i> 92, Singara Street, Anthiyur, Erode</li>
         </ul>
 
-        <div class="social-links">
-            <a href="https://github.com/Usha-ammu" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/usha-c-187516292" target="_blank"><i class="fab fa-linkedin"></i></a>
+       <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usha C - Cybersecurity & UI/UX Resume</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* ========================================================= */
+        /* 0. GLOBAL STYLES */
+        /* ========================================================= */
+        :root {
+            /* Updated for a Black and Neon Purple/Magenta Theme */
+            --dark-background: #0a0a0a; /* Deepest black background */
+            --sidebar-color: #121212; /* Slightly contrasting dark gray/black */
+            --text-color-light: #f0f0f0; /* Main light text */
+            --text-color-dark: #b0b0b0; /* Secondary gray text for details */
+            --accent-color:#8a2be2; /* BlueViolet - A nice, dark purple for minor accents */
+            --link-color: #8a2be2; /* Neon Magenta/Electric Purple for main highlights/links */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-background);
+            color: var(--text-color-light);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+        .resume-container {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            max-width: 1200px;
+            width: 100%;
+            background-color: var(--dark-background);
+            box-shadow: 0 0 40px rgba(226, 28, 255, 0.2); /* Neon shadow for a cyber look */
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(226, 28, 255, 0.3); /* Subtle neon border */
+        }
+
+        /* Standard content sections */
+        section {
+            padding: 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        h2 {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--text-color-light);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--link-color); /* Neon line under heading */
+            margin-top: 5px;
+        }
+
+        /* ========================================================= */
+        /* 1. LEFT SIDEBAR STYLING */
+        /* ========================================================= */
+        .sidebar {
+            background-color: var(--sidebar-color);
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .avatar-box {
+            margin-bottom: 30px;
+        }
+
+        .avatar {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--link-color); /* Neon border around avatar */
+            margin-bottom: 20px;
+        }
+
+        .name {
+            font-size: 2.2em;
+            font-weight: 700;
+            margin-bottom: 5px;
+            text-shadow: 0 0 5px var(--link-color); /* Subtle neon glow on name */
+        }
+
+        .title {
+            color: var(--link-color);
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+
+        .contact-info {
+            list-style: none;
+            text-align: left;
+            width: 100%;
+            padding: 20px 0;
+            border-top: 1px solid rgba(226, 28, 255, 0.2);
+            border-bottom: 1px solid rgba(226, 28, 255, 0.2);
+            margin-top: 20px;
+        }
+
+        .contact-info li {
+            margin-bottom: 15px;
+            color: var(--text-color-dark);
+            font-size: 0.9em;
+        }
+
+        .contact-info i {
+            width: 20px;
+            color: var(--link-color);
+            margin-right: 10px;
+        }
+
+        .social-links {
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            color: var(--text-color-light);
+            font-size: 1.4em;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--link-color);
+            text-shadow: 0 0 8px var(--link-color); /* Stronger glow on hover */
+        }
+        .resume-download-link h1 {
+    /* Style the text inside the h1 */
+    font-size: 1.2rem;
+    color: white; 
+    background-color: #8A2BE2; /* Primary purple color */
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 15px; /* Add some space below the social links */
+    display: inline-block;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.resume-download-link h1:hover {
+    background-color: #6A1B9A; /* Darker purple on hover */
+}
+
+        /* ========================================================= */
+        /* 2. RIGHT CONTENT STYLING */
+        /* ========================================================= */
+        .content {
+            background-color: #1a1a1a; /* Slightly lighter dark background for contrast */
+        }
+
+        /* --- Experience/Education/Project Item Styling --- */
+        .item {
+            margin-bottom: 30px;
+        }
+
+        .item h3 {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: var(--link-color); /* Title in neon purple */
+            margin-bottom: 5px;
+        }
+
+        .item p.subtitle {
+            font-size: 0.9em;
+            color: var(--text-color-dark);
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .item ul {
+            padding-left: 20px;
+            color: var(--text-color-dark);
+            list-style: disc;
+        }
+
+        .item ul li {
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+
+        /* --- Skills Section Styling --- */
+        .skills-list {
+            list-style: none;
+        }
+
+        .skill-item {
+            margin-bottom: 15px;
+        }
+
+        .skill-item span {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .skill-bar-container {
+            background-color: rgba(226, 28, 255, 0.1); /* Light neon purple background */
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .skill-bar {
+            height: 100%;
+            background-color: var(--link-color);
+            box-shadow: 0 0 5px var(--link-color); /* Subtle glow on the skill bar */
+            transition: width 1s ease-out;
+        }
+
+        /* Custom styling for skills categories */
+        .skill-category-title {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: var(--link-color); /* Category titles in neon purple */
+            margin: 20px 0 10px;
+            border-bottom: 1px solid rgba(226, 28, 255, 0.3);
+            padding-bottom: 5px;
+        }
+
+       /* Certifications/Courses styling */
+.list-item-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+}
+
+.list-item-group li {
+    background-color: var(--color-card-bg); /* Use the standard card background color */
+    color: var(--color-text-main); /* Use the main text color */
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 600;
+    border: 1px solid #333; /* A subtle border for definition */
+}
+        /* Media Query for Responsiveness */
+        @media (max-width: 900px) {
+            .resume-container {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="resume-container">
+    
+    <div class="sidebar">
+        <div class="avatar-box">
+            <img src="https://t4.ftcdn.net/jpg/06/43/68/65/360_F_643686558_Efl6HB1ITw98bx1PdAd1wy56QpUTMh47.jpg" alt="Usha C" class="avatar">
+            <h1 class="name">Usha C</h1>
+            <p class="title">Cybersecurity Specialist & UI/UX Designer</p>
         </div>
+
+        <ul class="contact-info">
+            <li><i class="fas fa-envelope"></i> harinichandru019@gmail.com</li>
+            <li><i class="fas fa-phone"></i> 8300649754</li>
+            <li><i class="fas fa-map-marker-alt"></i> 92, Singara Street, Anthiyur, Erode</li>
+        </ul>
+<div class="social-links">
+    <a href="https://github.com/Usha-ammu" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://www.linkedin.com/in/usha-c-187516292" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <br>
+    <a href="Usha.pdf" download="Usha_Resume" class="resume-download-link">
+        <h6>Download Resume⬇️</h6>
+    </a>
+</div>
     </div>
 
     <div class="content">
@@ -415,3 +711,140 @@
 
 </body>
 </html>
+    </div>
+
+    <div class="content">
+
+        <section id="experience">
+            <h2>Experience</h2>
+
+            <div class="item">
+                <h3>THINKINFO EXPERT SOLUTION | INTERN</h3>
+                <p class="subtitle"><span>Salem</span><span>Nov 2023 | 30 days</span></p>
+                <ul>
+                    <li>Performed comprehensive **vulnerability assessments and penetration tests** on web applications using tools like OWASP ZAP, Burp Suite, and Nmap.</li>
+                    <li>Identified and addressed over **25 critical and high-severity security flaws**, which significantly reduced the risk of exploitation.</li>
+                    <li>Engineered **automation scripts in Python and JavaScript** to detect and respond to cybersecurity threats in real-time.</li>
+                    <li>Collaborated with cross-functional teams to implement **security patches and hardening measures**.</li>
+                </ul>
+            </div>
+
+            <div class="item">
+                <h3>PARAGAVAN CYBER SOLUTION | INTERN</h3>
+                <p class="subtitle"><span>Salem</span><span>Jul 2024 | 30 days</span></p>
+                <ul>
+                    <li>Collaborated on the development of custom **security assessment tools** with responsive user interfaces using **React.js**.</li>
+                    <li>Supported backend development using **Node.js and Express.js**, implementing secure and efficient API endpoints.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Featured Projects</h2>
+
+            <div class="item">
+                <h3>IOT-POWERED SMART SHOPPING CART WITH COMPUTER VISION FOR AUTONOMOUS RETAIL</h3>
+                <ul>
+                    <li>Built an **IoT-enabled smart shopping cart** using **NodeMCU** and sensors.</li>
+                    <li>Integrated **YOLO-based computer vision** for real-time product detection, billing, and theft prevention.</li>
+                    <li>Delivered autonomous retail checkout with **real-time inventory management** and enhanced security.</li>
+                </ul>
+            </div>
+
+            <div class="item">
+                <h3>FUSIONQ - HYBRID QUESTION GENERATION SYSTEM</h3>
+                <ul>
+                    <li>Developed FusionQ, a hybrid system combining **rule-based NLP techniques** and **machine learning**.</li>
+                    <li>Automatically generates diverse and context-aware questions.</li>
+                    <li>Enhanced adaptability by supporting **educational and conversational domains**, enabling fine-tuning for specific use cases.</li>
+                </ul>
+            </div>
+
+            <div class="item">
+                <h3>UI DESIGN - FOOD APP INTERFACE (INTERN PROJECT)</h3>
+                <p class="subtitle"><span>July 2025</span><span>UI/UX Design</span></p>
+                <ul>
+                    <li>Designed a food delivery app interface using **Figma**, focusing on intuitive UI layouts and engaging user experience.</li>
+                    <li>Created interactive prototypes to demonstrate ordering flow, menu browsing, and cart management for improved usability.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+
+            <div class="item">
+                <h3>BE-COMPUTER SCIENCE WITH CYBERSECURITY</h3>
+                <p class="subtitle"><span>KSR INSTITUTE FOR ENGINEERING AND TECHNOLOGY, Tiruchengode</span><span>2022-2026</span></p>
+                <p>CGPA: 8.4 (Till Sixth Semester)</p>
+            </div>
+            
+            <div class="item">
+                <h3>HIGHER SECONDARY SCHOOL</h3>
+                <p class="subtitle"><span>GOVERNMENT MODEL HIGHER SECONDARY SCHOOL, Anthiyur</span><span>2021-2022</span></p>
+                <p>Percentage: 77</p>
+            </div>
+              <div class="item">
+                <h3>SECONDARY SCHOOL</h3>
+                <p class="subtitle"><span>ST MICHAEL'S HIGHER SECONDARY SCHOOL, Anthiyur</span><span>2021-2022</span></p>
+                <p>Percentage: 74</p>
+            </div>
+        </section>
+        
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            
+            <div class="skill-category-title">Programming & Design</div>
+            <div class="skills-list">
+                <div class="skill-item">
+                    <span>Python, HTML, CSS, Java</span>
+                    <div class="skill-bar-container"><div class="skill-bar" style="width: 85%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span>UI/UX Design, Figma</span>
+                    <div class="skill-bar-container"><div class="skill-bar" style="width: 90%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span>React.js, Node.js (Full-Stack Support)</span>
+                    <div class="skill-bar-container"><div class="skill-bar" style="width: 80%;"></div></div>
+                </div>
+            </div>
+            
+            <div class="skill-category-title">Technologies & Tools</div>
+            <div class="skills-list">
+                <div class="skill-item">
+                    <span>Git/GitHub, MySQL</span>
+                    <div class="skill-bar-container"><div class="skill-bar" style="width: 75%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span>Machine Learning, NLP</span>
+                    <div class="skill-bar-container"><div class="skill-bar" style="width: 70%;"></div></div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="certifications">
+            <h2>Certifications & Courses</h2>
+
+            <div class="skill-category-title">Certifications</div>
+            <ul class="list-item-group">
+                <li>Machine Learning Onramp - MathWorks</li>
+                <li>Ethical Hacking - GreatLearning</li>
+                <li>Full Stack - Novi Tech</li>
+                <li>Python - Digilabs</li>
+            </ul>
+
+            <div class="skill-category-title">Courses</div>
+            <ul class="list-item-group">
+                <li>Machine Learning - Geek for Geeks</li>
+                <li>UI/UX Designing - NoviTech</li>
+                <li>Figma Designing - W3 Schools</li>
+            </ul>
+        </section>
+
+    </div>
+</div>
+
+</body>
+</html>
+
